@@ -1,6 +1,11 @@
 name: Refresh Tamil Nadu retail food prices
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/refresh_food_prices.py'
+      - '.github/workflows/refresh-food-prices.yml'
   schedule:
     - cron: '30 1 * * 0'
   workflow_dispatch:
