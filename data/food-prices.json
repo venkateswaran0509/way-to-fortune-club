@@ -2,7 +2,7 @@
   "title": "Tamil Nadu retail food prices",
   "asOf": "2026-11-17",
   "comparisonDate": "2026-11-10",
-  "generatedAt": "2026-11-17T10:46:10.574900+00:00",
+  "generatedAt": "2026-11-17T10:55:42.764275+00:00",
   "state": "Tamil Nadu",
   "aggregation": "Unweighted mean of available Department of Consumer Affairs reporting-centre retail prices within Tamil Nadu.",
   "source": {
@@ -197,4 +197,3 @@
     }
   ]
 }
-
