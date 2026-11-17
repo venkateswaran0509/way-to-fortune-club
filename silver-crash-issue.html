@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b2d">
+<title>Gold–Silver Ratio | Way to Fortune</title>
+<style>
+:root{--navy:#101b2d;--navy2:#1b2a40;--gold:#c89d43;--gold-soft:#f3e8cf;--silver:#9aa3ad;--ink:#202938;--muted:#687383;--line:#e6e8eb;--paper:#fbfaf7;--white:#fff;--green:#356b53;--amber:#8a641f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}.shell{max-width:980px;margin:auto;padding:0 26px 64px}
+.topbar{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--navy)}.brand-mark{color:var(--gold);font-size:17px;margin-right:9px}
+.top-note{font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.hero{padding:76px 0 54px;max-width:760px}.kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:800}
+h1{font-size:clamp(43px,8vw,76px);line-height:.99;letter-spacing:-.065em;color:var(--navy);font-weight:760;margin:17px 0 20px}
+h1 span{color:var(--gold)}.intro{font-size:17px;line-height:1.7;color:#596575;max-width:620px;margin:0}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:32px;padding-top:17px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}.hero-meta b{color:var(--navy);font-weight:750}
+.section{padding:43px 0;border-top:1px solid var(--line);scroll-margin-top:20px}
+.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:23px}
+.section-no{font-size:10px;letter-spacing:.16em;color:var(--gold);font-weight:850}
+h2{font-size:25px;line-height:1.2;letter-spacing:-.035em;color:var(--navy);margin:5px 0 0;font-weight:740}
+h3{font-size:15px;color:var(--navy);margin:0 0 8px}
+p{margin:0 0 12px}.muted{color:var(--muted)}.small{font-size:12px}.tiny{font-size:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:30px;padding:3px;gap:2px;background:white;flex-shrink:0}
+.lang button{border:0;background:transparent;color:var(--muted);padding:6px 11px;border-radius:20px;font-size:11px;font-weight:700}
+.lang button.active{background:var(--navy);color:white}
+.explain{max-width:700px;font-size:16px;color:#4d5969}
+.example{margin-top:24px;padding:25px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px}
+.example-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.example-big{font-size:clamp(45px,8vw,68px);line-height:1;color:var(--gold);font-weight:780;letter-spacing:-.06em}
+.example-caption{font-size:13px;color:var(--muted);margin-top:7px}
+.mathline{font-size:13px;color:var(--navy);font-weight:650;margin-top:13px}
+.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+label{display:block;font-size:12px;color:#4c5868;font-weight:700}
+input{display:block;width:100%;margin-top:7px;border:1px solid #d9dde2;border-radius:7px;padding:12px 11px;background:#fff;color:var(--navy);font:inherit;font-size:15px;outline:none}
+input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #c89d4320}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+button.action{border:1px solid var(--line);background:white;color:var(--navy);border-radius:6px;padding:9px 13px;font-size:11px;font-weight:750}
+button.action.primary{background:var(--navy);border-color:var(--navy);color:white}
+button.action:hover{border-color:var(--gold)}
+.result{background:var(--navy);color:white;padding:25px 24px;min-height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.result-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#cbd2dc}
+.ratio{font-size:clamp(42px,7vw,58px);line-height:1.1;font-weight:780;letter-spacing:-.055em;color:#e5c47f;margin:12px 0}
+.result-desc{font-size:13px;color:#e1e5eb;max-width:310px}
+.result-divider{border:0;border-top:1px solid #ffffff2a;margin:24px 0 17px}
+.qty-label{font-size:11px;color:#cbd2dc;margin-bottom:7px}
+.qty-result{font-size:25px;color:#e5c47f;font-weight:750;line-height:1.25}
+.price-status{font-size:11px;color:var(--muted);margin-top:12px;min-height:18px}
+.price-status.error{color:#a33a2c}.price-status.ok{color:var(--green)}
+.note{font-size:11px;color:var(--muted);margin-top:15px;max-width:720px}
+.chart-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+select{border:1px solid var(--line);border-radius:6px;background:white;color:var(--ink);padding:8px 10px;font-size:11px}
+.chart-wrap{background:white;border:1px solid var(--line);padding:16px 14px 8px}
+canvas{width:100%;height:280px;display:block}
+.chart-note{font-size:11px;color:var(--muted);margin-top:12px}
+.insight{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.insight-col{padding-top:13px;border-top:2px solid var(--gold)}
+.insight-col:last-child{border-color:var(--silver)}
+.insight-col ul{padding-left:17px;margin:10px 0 0;color:#596575;font-size:13px}
+.insight-col li{margin:7px 0}
+.interpret{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.interpret article{padding:16px 0;border-top:2px solid var(--gold)}
+.interpret article:last-child{border-color:var(--silver)}
+.interpret .bigword{font-size:20px;font-weight:750;color:var(--navy);margin-bottom:5px}
+.warning-list{border-top:1px solid #ffffff28}
+.warning-item{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #ffffff28}
+.warning-item strong{font-size:13px;color:white}.warning-item p{font-size:12px;color:#cbd2dc;margin:3px 0 0}
+.warning-icon{color:#e5c47f}
+.dark-section{background:var(--navy);color:white;padding:25px 27px;margin-top:0}
+.dark-section h2{color:white}.dark-section .section-no{color:#e5c47f}
+.disclaimer{background:#f0eee8;padding:23px 25px;border-left:3px solid var(--gold)}
+.disclaimer h3{font-size:16px}.disclaimer p{font-size:12px;color:#586273;margin:8px 0}
+.footer{padding:25px 0 0;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:10px;letter-spacing:.04em}
+.source a{color:var(--amber)}
+@media(max-width:680px){.shell{padding:0 18px 45px}.hero{padding:55px 0 40px}.section{padding:34px 0}.section-head{flex-direction:column;gap:12px}.calc-layout,.insight,.interpret{grid-template-columns:1fr;gap:22px}.fields{grid-template-columns:1fr 1fr}.example{grid-template-columns:1fr}.example-big{font-size:56px}.result{min-height:280px}.dark-section{padding:21px 18px}.chart-wrap{padding:9px 4px 5px}canvas{height:240px}}
+@media(max-width:390px){.fields{grid-template-columns:1fr}.hero-meta{gap:12px}}
+</style>
+</head>
+<body>
+<main class="shell">
+<header class="topbar"><a class="brand" href="index.html" aria-label="Way to Fortune Club home"><span class="brand-mark">◆</span>WAY TO FORTUNE</a><div class="top-note"><a href="index.html" style="text-decoration:none;color:inherit">HOME</a> · A simple guide to precious metals</div></header>
+
+<section class="hero">
+ <div class="kicker">Understand the relationship · India</div>
+ <h1>Gold–Silver<br><span>Ratio.</span></h1>
+ <p class="intro" data-en="A simple way to compare the value of gold and silver. Find out how many grams of silver equal the value of one gram of gold." data-ta="Gold மற்றும் silver-ன் மதிப்பை ஒப்பிட ஒரு எளிய வழி. ஒரு கிராம் தங்கத்தின் மதிப்புக்கு எத்தனை கிராம் வெள்ளி சமம் என்பதை தெரிந்துகொள்ளுங்கள்.">A simple way to compare the value of gold and silver. Find out how many grams of silver equal the value of one gram of gold.</p>
+ <div class="hero-meta"><span><b>Au</b> · Gold</span><span><b>Ag</b> · Silver</span><span><b>₹ / gram</b> · Indian units</span></div>
+</section>
+
+<section class="section" id="learn">
+ <div class="section-head"><div><div class="section-no">01 / THE CONCEPT</div><h2>What does the ratio mean?</h2></div><div class="lang"><button id="englishBtn" class="active">English</button><button id="tanglishBtn">Tanglish</button></div></div>
+ <p class="explain" data-en="Think of it as a price comparison. If one gram of gold costs ₹12,000 and one gram of silver costs ₹150, divide the gold price by the silver price. The answer is 80. That means 80 grams of silver have roughly the same market value as one gram of gold." data-ta="Idha oru price comparison-ah paarunga. Oru gram gold ₹12,000; oru gram silver ₹150-na, gold price-ai silver price-la divide pannunga. Answer 80. Adhaavadhu 1 gram gold-oda market value-ku 80 grams silver equal.">Think of it as a price comparison. If one gram of gold costs ₹12,000 and one gram of silver costs ₹150, divide the gold price by the silver price. The answer is 80. That means 80 grams of silver have roughly the same market value as one gram of gold.</p>
+ <div class="example"><div><div class="example-label">Illustrative example · Not today's prices</div><div class="example-caption">₹12,000 ÷ ₹150</div><div class="mathline">1g gold = 80g silver in value</div></div><div class="example-big">80 : 1</div></div>
+ <p class="small muted" style="margin-top:14px" data-en="The ratio describes a relationship between prices. It does not predict which metal will rise or fall." data-ta="Indha ratio rendu metal-oda price relationship-ai mattum kaattum. Endha metal price increase aagum-nu predict pannaadhu.">The ratio describes a relationship between prices. It does not predict which metal will rise or fall.</p>
+</section>
+
+<section class="section" id="calculator">
+ <div class="section-head"><div><div class="section-no">02 / INTERACTIVE TOOL</div><h2>Calculate the ratio</h2></div><div class="small muted">Indian rupees · grams</div></div>
+ <div class="calc-layout">
+  <div>
+   <div class="fields">
+    <label>Gold price <span class="muted">(₹ / gram)</span><input id="goldPrice" type="number" min=".01" step="any" value="12000"></label>
+    <label>Silver price <span class="muted">(₹ / gram)</span><input id="silverPrice" type="number" min=".01" step="any" value="150"></label>
+   </div>
+   <div class="actions"><button class="action primary" id="fetchPrices">Fetch indicative spot prices</button><button class="action" id="exampleRates">Use example</button></div>
+   <div class="price-status" id="priceStatus">Example values are loaded. You can enter your own rates.</div>
+   <p class="note">The price button requests indicative spot conversions, not Chennai jewellery-shop prices. Provider availability and timestamps may vary. If it fails, enter rates manually.</p>
+   <div style="margin-top:25px">
+    <label>Gold quantity you want to compare <span class="muted">(grams)</span><input id="goldQty" type="number" min=".001" step="any" value="10"></label>
+   </div>
+  </div>
+  <div class="result">
+   <div><div class="result-label">Your gold–silver ratio</div><div class="ratio" id="ratioValue">80 : 1</div><p class="result-desc" id="ratioSentence">1 gram of gold has the same spot value as 80 grams of silver.</p></div>
+   <div><hr class="result-divider"><div class="qty-label">Equivalent silver quantity</div><div class="qty-result" id="silverEquivalent">800 grams</div><div class="small" style="color:#cbd2dc;margin-top:5px" id="equivalentValue">Both have a spot value of ₹1,20,000</div></div>
+  </div>
+ </div>
+ <p class="note"><b>Formula:</b> Gold price per gram ÷ Silver price per gram = ratio. Gold quantity × ratio = equivalent silver quantity. For a fair comparison, use consistent purity and comparable price sources.</p>
+</section>
+
+<section class="section" id="history">
+ <div class="section-head"><div><div class="section-no">03 / MARKET CONTEXT</div><h2>How has it changed over time?</h2></div></div>
+ <div class="chart-head"><span class="small muted">Annual reference ratio · approximate</span><select id="period" aria-label="Chart period"><option value="10">10 years</option><option value="5">5 years</option></select></div>
+ <div class="chart-wrap"><canvas id="historyChart" width="920" height="300" aria-label="Approximate historical gold silver ratio chart"></canvas></div>
+ <p class="chart-note">Illustrative annual reference values, rounded; not a verified daily market series. Treat this as a learning aid, not a source for trading decisions. Cross-check benchmark data before public financial use.</p>
+ <p class="small muted" style="margin-top:13px">When the line rises, silver has become cheaper relative to gold over that period. When it falls, silver has become more expensive relative to gold. Neither movement guarantees what happens next.</p>
+</section>
+
+<section class="section" id="interpret">
+ <div class="section-head"><div><div class="section-no">04 / HOW TO READ IT</div><h2>High ratio. Low ratio.</h2></div></div>
+ <div class="interpret">
+  <article><div class="bigword">Higher ratio</div><p class="small muted">Silver is less expensive relative to gold than it is at a lower ratio. Example: 100 grams of silver equal one gram of gold in value.</p></article>
+  <article><div class="bigword">Lower ratio</div><p class="small muted">Silver is more expensive relative to gold than it is at a higher ratio. Example: 50 grams of silver equal one gram of gold in value.</p></article>
+ </div>
+ <p class="small muted" style="margin-top:13px">A high ratio is not automatically a buy signal. A low ratio is not automatically a sell signal.</p>
+</section>
+
+<section class="section" id="proscons">
+ <div class="section-head"><div><div class="section-no">05 / THINK CRITICALLY</div><h2>What it helps with — and what it doesn't</h2></div></div>
+ <div class="insight">
+  <div class="insight-col"><h3>What it helps with</h3><ul><li>Compare relative prices of gold and silver.</li><li>Understand how two precious metals can behave differently.</li><li>Put today's relationship into historical context.</li><li>Add one data point to broader market research.</li></ul></div>
+  <div class="insight-col"><h3>Where it falls short</h3><ul><li>It cannot predict future prices or returns.</li><li>Silver can be more volatile than gold.</li><li>Industrial demand can influence silver prices.</li><li>It excludes retail premiums, taxes and transaction costs.</li><li>Historical patterns may not repeat.</li></ul></div>
+ </div>
+</section>
+
+<section class="section dark-section" id="warnings">
+ <div class="section-head"><div><div class="section-no">06 / BEFORE YOU ACT</div><h2>Important warnings</h2></div></div>
+ <div class="warning-list">
+  <div class="warning-item"><span class="warning-icon">01</span><div><strong>A high ratio does not mean “buy silver now”.</strong><p>The ratio can stay high or move higher. It is not a timing signal.</p></div></div>
+  <div class="warning-item"><span class="warning-icon">02</span><div><strong>Compare like with like.</strong><p>Check purity and use comparable spot-price references. Jewellery prices are different from spot prices.</p></div></div>
+  <div class="warning-item"><span class="warning-icon">03</span><div><strong>Include the real-world costs.</strong><p>GST, making charges, dealer margins, storage and buy/sell spreads affect the actual outcome.</p></div></div>
+  <div class="warning-item"><span class="warning-icon">04</span><div><strong>Do not rely on one indicator.</strong><p>Interest rates, currency movements, inflation expectations and industrial demand also matter.</p></div></div>
+ </div>
+</section>
+
+<section class="section" id="disclaimer">
+ <div class="disclaimer"><div class="kicker">WAY TO FORTUNE CLUB</div><h3 style="margin-top:7px">Educational disclaimer</h3>
+  <p>This dashboard is strictly for educational and informational purposes. It explains the Gold–Silver Ratio and demonstrates a mathematical calculation using Indian Rupees per gram.</p>
+  <p>Nothing here constitutes investment advice, a personal recommendation, solicitation, or an offer to buy or sell gold, silver, securities or any financial product. No future price movement or return is promised or guaranteed.</p>
+  <p>Market prices may be delayed, indicative, incomplete or different from local physical-market prices. Verify prices, purity, taxes, liquidity, costs and risks independently before making a financial decision. Consult an appropriately qualified professional if needed.</p>
+  <p class="source">Reference links: <a href="https://goldprice.dev/docs" target="_blank" rel="noopener">GoldPrice.dev documentation</a> · <a href="https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/world-bank-commodities-price-data-the-pink-sheet" target="_blank" rel="noopener">World Bank Commodity Price Data</a>.</p>
+ </div>
+</section>
+<footer class="footer"><a href="index.html" style="text-decoration:none">◆ WAY TO FORTUNE CLUB · HOME</a><span>Learn money. Understand assets. Build wealth responsibly.</span><span>© 2026</span></footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const inr=n=>'₹'+Number(n).toLocaleString('en-IN',{maximumFractionDigits:2});
+const fmt=n=>Number(n).toLocaleString('en-IN',{maximumFractionDigits:2});
+function calculate(){
+ const g=Number($('goldPrice').value),s=Number($('silverPrice').value),q=Number($('goldQty').value);
+ if(!(g>0&&s>0&&Number.isFinite(g)&&Number.isFinite(s))){
+  $('ratioValue').textContent='—';$('ratioSentence').textContent='Enter positive gold and silver prices.';$('silverEquivalent').textContent='—';$('equivalentValue').textContent='';return;
+ }
+ const r=g/s;$('ratioValue').textContent=fmt(r)+' : 1';
+ $('ratioSentence').textContent='1 gram of gold has the same spot value as '+fmt(r)+' grams of silver.';
+ if(q>0&&Number.isFinite(q)){$('silverEquivalent').textContent=fmt(q*r)+' grams';$('equivalentValue').textContent='Both have a spot value of '+inr(q*g);}
+ else{$('silverEquivalent').textContent='Enter a positive quantity';$('equivalentValue').textContent='';}
+}
+['goldPrice','silverPrice','goldQty'].forEach(id=>$(id).addEventListener('input',calculate));
+$('exampleRates').onclick=()=>{$('goldPrice').value=12000;$('silverPrice').value=150;$('goldQty').value=10;$('priceStatus').textContent='Example values loaded. These are not live prices.';$('priceStatus').className='price-status';calculate();};
+$('fetchPrices').onclick=async()=>{
+ const btn=$('fetchPrices'),status=$('priceStatus');btn.disabled=true;btn.textContent='Fetching…';status.className='price-status';status.textContent='Requesting indicative INR per-gram spot conversions…';
+ try{
+  const base='https://api.goldprice.dev/v1/convert';
+  const [gold,silver]=await Promise.all(['XAU','XAG'].map(async metal=>{
+   const u=base+'?from='+metal+'&to=INR&amount=1&unit=gram';
+   const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error(metal+' request failed ('+r.status+').');
+   const d=await r.json();const value=Number(d.result);if(!(value>0))throw new Error('Invalid '+metal+' price returned.');return {value,timestamp:d.timestamp};
+  }));
+  $('goldPrice').value=gold.value;$('silverPrice').value=silver.value;calculate();
+  const date=new Date(Math.min(Date.parse(gold.timestamp),Date.parse(silver.timestamp)));
+  status.className='price-status ok';status.textContent='Indicative spot prices loaded · provider timestamp: '+(isNaN(date)?'not supplied':date.toLocaleString('en-IN'))+'. This is not a local retail quote.';
+ }catch(e){status.className='price-status error';status.textContent='Could not fetch prices: '+e.message+' Use manual inputs instead. If opening as file:// blocks requests, open through a local server.';}
+ finally{btn.disabled=false;btn.textContent='Fetch indicative spot prices';}
+};
+const years=[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+const ratios=[73.0,73.6,80.8,85.9,86.3,71.4,82.6,83.0,84.4,88.1];
+function drawChart(){
+ const n=Number($('period').value),ys=years.slice(-n),vs=ratios.slice(-n),c=$('historyChart'),ctx=c.getContext('2d');
+ const W=c.width,H=c.height,L=48,R=18,T=22,B=38,lo=Math.floor((Math.min(...vs)-5)/10)*10,hi=Math.ceil((Math.max(...vs)+5)/10)*10;
+ ctx.clearRect(0,0,W,H);ctx.font='12px system-ui';ctx.lineWidth=1;
+ for(let v=lo;v<=hi;v+=10){const y=T+(hi-v)/(hi-lo)*(H-T-B);ctx.strokeStyle='#eceef0';ctx.beginPath();ctx.moveTo(L,y);ctx.lineTo(W-R,y);ctx.stroke();ctx.fillStyle='#788291';ctx.textAlign='right';ctx.fillText(v,L-9,y+4);}
+ const pts=vs.map((v,i)=>({x:L+(ys.length===1?0:i*(W-L-R)/(ys.length-1)),y:T+(hi-v)/(hi-lo)*(H-T-B),v,year:ys[i]}));
+ ctx.strokeStyle='#c89d43';ctx.lineWidth=3;ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();
+ pts.forEach(p=>{ctx.fillStyle='#c89d43';ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();ctx.fillStyle='#536071';ctx.textAlign='center';ctx.fillText(p.year,p.x,H-12);ctx.fillStyle='#8a641f';ctx.fillText(p.v.toFixed(1),p.x,p.y-11);});
+}
+$('period').addEventListener('change',drawChart);window.addEventListener('resize',drawChart);
+$('englishBtn').onclick=()=>setLang('en');$('tanglishBtn').onclick=()=>setLang('ta');
+function setLang(lang){document.querySelectorAll('[data-en][data-ta]').forEach(el=>{el.textContent=el.dataset[lang];});$('englishBtn').classList.toggle('active',lang==='en');$('tanglishBtn').classList.toggle('active',lang==='ta');}
+calculate();drawChart();
+</script>
+</body></html>
+
