@@ -15,7 +15,7 @@
 <div class="shell">
 <header class="topbar">
   <a class="brand" href="index.html"><span class="brand-mark">◆</span>WAY TO FORTUNE</a>
-  <nav class="nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="#latest">Explore</a></nav>
+  <nav class="nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="#latest">Explore</a><a href="#tools">Tools</a></nav>
 </header>
 <main>
   <section class="hero">
@@ -27,6 +27,10 @@
   <section class="section" id="latest" aria-labelledby="latest-title">
     <div class="section-head"><div><div class="section-no">THE LIBRARY</div><h2 id="latest-title">Latest insights</h2></div><div class="section-note">New additions appear first</div></div>
     <div class="cards" id="content-cards" aria-live="polite"></div>
+  </section>
+  <section class="section" id="tools" aria-labelledby="tools-title">
+    <div class="section-head"><div><div class="section-no">TOOLS</div><h2 id="tools-title">Decision tools</h2></div><div class="section-note">Practical calculators and guided checklists</div></div>
+    <div class="cards" id="tool-cards" aria-live="polite"></div>
   </section>
 </main>
 <footer class="footer"><span class="footer-brand">◆ WAY TO FORTUNE CLUB</span><span>Learn money. Understand assets. Build wealth responsibly.</span><span>© <span id="year"></span></span></footer>
@@ -49,6 +53,18 @@ const cards = document.getElementById('content-cards');
   cards.appendChild(card);
 });
 document.getElementById('year').textContent=new Date().getFullYear();
+const toolItems = [
+  { title: 'Gold & Silver Decision Guide', category: 'Buying decision', publishedOn: '2026-11-20', description: 'Compare jewellery costs, estimate a hypothetical resale value, assess financial readiness, and understand common investment routes.', href: 'gold-silver-decision-guide.html', readTime: 'Interactive tool' }
+];
+const toolCards = document.getElementById('tool-cards');
+[...toolItems].sort((a,b)=>Date.parse(b.publishedOn)-Date.parse(a.publishedOn)).forEach(item=>{
+  const card=document.createElement('a'); card.className='card'; card.href=item.href;
+  const date=new Date(item.publishedOn+'T00:00:00');
+  const dateLabel=new Intl.DateTimeFormat('en-IN',{day:'numeric',month:'short',year:'numeric'}).format(date);
+  card.innerHTML=`<div class="card-top"><span class="tag">${item.category}</span><time class="date" datetime="${item.publishedOn}">${dateLabel}</time></div><h3>${item.title}</h3><p>${item.description}</p><div class="card-bottom"><strong>${item.readTime}</strong><span class="arrow" aria-hidden="true">↗</span></div>`;
+  toolCards.appendChild(card);
+});
+
 </script>
 </body>
 </html>
